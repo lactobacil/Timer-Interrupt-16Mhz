@@ -7,4 +7,8 @@ The selected register is TIMSK1 and the set enable bit of OCIE1A for time mask m
 # Testing
 Testing was done with Atmega328P on an arduino code, tested with the millis library, oscilloscope test should be done further.
 
-![image](https://user-images.githubusercontent.com/72569245/130215695-4f249261-67d0-40b1-82b2-0244ab119d7b.png)
+![IMG_4407](https://user-images.githubusercontent.com/72569245/130217267-2cd768b0-476c-42e1-a4c2-aedc7d49f420.jpg)
+
+
+![image](https://user-images.githubusercontent.com/72569245/130217168-764b4cb9-3390-415b-b0fc-f0fc225cf1dd.png)
+
