@@ -12,11 +12,11 @@ You should declare the variable in the global scope and assume it is used by oth
 not just the interrupt.
  */
 
-
+// Tested the code with atmega328p, should find and oscilloscope to test the timing
 // Declare Variables as they could be accessed in other places. 
-// Good practice is to use volatile for interrupt triggers. 
+// Good practice is to use volatile for dealing with interrupt integers. 
 volatile int itter;
-bool LED = false;
+bool LED = false; 
 
 //Declare Timing variables to test time elapsed
 unsigned long StartTime;
@@ -33,7 +33,7 @@ void setup() {
   TCCR1A = B00000000;
   TCCR1B = B00000000;
   
-  //Configure Prescaler to assign to the bits, set prescaler to 256
+  //Configure Prescaler by assigning the bits, set prescaler to 256
   TCCR1B |= (1 << CS12);
   
   //Set register of the register A to compare with OCR1A variable, set enable bit
@@ -42,13 +42,13 @@ void setup() {
   //Count the timer for 1.02 seconds, then trigger the interrupt
   // for prescaler 256, Pulse Time 1/62.5 khz = 16us. 
   // 1.02s -> 1020 ms then, 1020ms/16us = 63750 (Max 65535 to keep resolution at its finest)
+  // If prescaler is 1024, then the reload is around 15500, however, good practice is to keep the reload close to 65535 for max 
   
   OCR1A = 63750;
   //OCR1A = 20000;
   sei(); //Enable all the interrupts back again. 
 
   //StartTime = millis();
-
   
 }
 
@@ -66,8 +66,6 @@ ISR(TIMER1_COMPA_vect){
   //EndTime = millis();
   //Serial.println(EndTime - StartTime);
 }
-
-
 
 void loop() {
   // put your main code here, to run repeatedly:
