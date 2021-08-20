@@ -50,7 +50,7 @@ void setup() {
 }
 
 
-//TIMER1 Calls an ISR for after 1020ms or 1.02 seconds, the matching interrupt is TIMER1_COMPA_vect
+//TIMER1 Calls an ISR for after 1020ms or 1.02 seconds, the matching interrupt is TIMER1_COMPA_vect, disable interrupt if calling only once is needed.
 ISR(TIMER1_COMPA_vect){
   TCNT1  = 0; //Reset the timer in TCNT1 register to zero as the counter have reached the count.
   itter++; //Itter Increment every 1.02 seconds, declared globally
