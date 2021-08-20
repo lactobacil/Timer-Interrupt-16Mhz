@@ -1,5 +1,5 @@
 # Timer-Interrupt-16Mhz
-A task to trigger an interrupt for every 1.02 seconds or 1020ms with high kept timer resolution
+A task to trigger an interrupt for every 1.02 seconds or 1020ms with high kept timer resolution. Using 256 as prescaler
 
 # Register
 The selected register is TIMSK1 and the set enable bit of OCIE1A for time mask mode
